@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+#components-layout-demo-responsive .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+.site-layout-sub-header-background {
+  display: flex;
+  height: 45px;
+  line-height: 45px;
+  justify-content: center;
+  background: #fff;
+  padding-left: 30px;
+  font-size: medium;
+  font-weight: 700;
+}
+
+.site-layout-content {
+  margin: 24px 16px 0;
+}
+
+.site-layout-background {
+  background: #fff;
+  padding: 24px;
+  min-height: 360px;
+  min-width: 400px;
+}
+
+.layout-wrapper {
+  height: 100vh;
+}
