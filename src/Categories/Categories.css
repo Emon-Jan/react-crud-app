@@ -1,0 +1,47 @@
+.card-category {
+  width: 90%;
+  margin-top: 20px !important;
+}
+
+.category-panel__with-button {
+  width: 100%;
+  position: relative;
+  margin-top: 35px;
+}
+
+.category-panel {
+  display: flex;
+  width: 100%;
+  min-width: 300px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-create__button {
+  position: absolute !important;
+  top: -30px;
+  right: 20px;
+}
+
+.form-first-field {
+  display: flex;
+  align-items: center;
+}
+
+.form-first-field button {
+  margin-top: 22px;
+  margin-left: 15px;
+}
+
+.divider {
+  margin-top: 10px !important;
+}
+
+.form-input-label {
+  margin-bottom: 10px;
+}
+
+.form-input-label label {
+  font-weight: 600;
+  color: rgb(83, 91, 97);
+}
