@@ -7,12 +7,14 @@ import { CreditCardOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import Posts from "./posts/Posts";
 import Categories from "./Categories/Categories";
 
+import { withRouter } from "react-router";
+
 import "antd/dist/antd.css";
 import "./App.css";
 
 const { Header, Content, Sider } = Layout;
 
-function App() {
+function App(props) {
   const [posts, setPosts] = useState([
     {
       title: "Post 1",
@@ -45,11 +47,22 @@ function App() {
     "p8",
   ]);
 
+  const childProps = {
+    showPosts: posts,
+    categories,
+    setCategories,
+    setShowPost: setPosts,
+  };
+
   return (
     <Layout className="layout-wrapper">
       <Sider breakpoint="lg" collapsedWidth="0">
         <div className="logo" />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={["/"]}>
+        <Menu
+          theme="dark"
+          mode="inline"
+          selectedKeys={[props.location.pathname]}
+        >
           <Menu.Item key="/" icon={<CreditCardOutlined />}>
             <Link to="/">Posts</Link>
           </Menu.Item>
@@ -65,27 +78,11 @@ function App() {
             <Switch>
               <Route
                 path="/categories"
-                render={(props) => (
-                  <Categories
-                    {...props}
-                    categories={categories}
-                    posts={posts}
-                    setCategories={setCategories}
-                    setShowPost={setPosts}
-                  />
-                )}
+                render={(props) => <Categories {...props} {...childProps} />}
               />
               <Route
                 path="/"
-                render={(props) => (
-                  <Posts
-                    {...props}
-                    showPosts={posts}
-                    categories={categories}
-                    setCategories={setCategories}
-                    setShowPost={setPosts}
-                  />
-                )}
+                render={(props) => <Posts {...props} {...childProps} />}
               />
             </Switch>
           </div>
@@ -95,4 +92,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
