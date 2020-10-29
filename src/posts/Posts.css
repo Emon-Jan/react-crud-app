@@ -1,11 +1,5 @@
-.card-post {
-  width: 90%;
-  margin-top: 20px !important;
-}
-
 .post-panel__with-button {
   position: relative;
-
   margin-top: 35px;
 }
 
@@ -31,4 +25,17 @@
 .form-first-field button {
   margin-top: 22px;
   margin-left: 15px;
+}
+
+.divider {
+  margin-top: 10px !important;
+}
+
+.form-input-label {
+  margin-bottom: 10px;
+}
+
+.form-input-label label {
+  font-weight: 600;
+  color: rgb(83, 91, 97);
 }
