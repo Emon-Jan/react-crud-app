@@ -59,10 +59,12 @@
 }
 
 .site-layout-background {
+  display: flex;
+  justify-content: center;
   background: #fff;
   padding: 24px;
   min-height: 360px;
-  min-width: 400px;
+  min-width: 350px;
 }
 
 .layout-wrapper {
