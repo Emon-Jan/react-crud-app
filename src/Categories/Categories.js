@@ -66,10 +66,9 @@ function Categories(props) {
   const onDelete = (item, index) => {
     const categories = props.categories.slice();
     categories.splice(index, 1);
-    const posts = props.posts
-      .slice()
-      .filter((post) => post.category.includes(item));
-    posts.map((post) => {
+    const posts = props.posts.slice();
+    const filteredPosts = posts.filter((post) => post.category.includes(item));
+    filteredPosts.map((post) => {
       const indexOfCategory = post.category.indexOf(item);
       post.category.splice(indexOfCategory, 1);
       return post;
