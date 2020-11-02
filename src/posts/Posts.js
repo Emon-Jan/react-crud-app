@@ -48,7 +48,7 @@ function Posts(props) {
   const onUpdate = () => {
     const postObj = { title, description, category };
     if (checkFormValueEmpty()) {
-      const posts = props.showPosts.slice();
+      const posts = props.posts.slice();
       posts.splice(onEditIndex, 1, postObj);
       props.setShowPost(posts);
     }
@@ -56,7 +56,7 @@ function Posts(props) {
   };
 
   const onDelete = (index) => {
-    const posts = props.showPosts.slice();
+    const posts = props.posts.slice();
     posts.splice(index, 1);
     props.setShowPost(posts);
   };
@@ -70,7 +70,7 @@ function Posts(props) {
   const onEdit = (index) => {
     setOnEditRequest(true);
     setOnEditIndex(index);
-    updatePostState(props.showPosts[index]);
+    updatePostState(props.posts[index]);
     showModal();
   };
 
@@ -192,7 +192,7 @@ function Posts(props) {
     </form>
   );
 
-  const posts = props.showPosts.map((post, i) => (
+  const posts = props.posts.map((post, i) => (
     <Post
       post={post}
       categories={props.categories}
